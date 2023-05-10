@@ -282,11 +282,4 @@ function breake_arry($arr){
         print_r($arr);
         echo "</pre>";
     }
-    $com=new Connection("localhost","root","","testing");
-    $com->settable("data");
-//   $p=$com->insert(["name"=>"rashid farid","email"=>"testing@gmail.com","password"=>"1234"]);
-// $p=$com->update(["name"=>"rashid farid","email"=>"testing@gmail.com","password"=>"1234"],10);
-$p=$com->query("SELECT * FROM data");
-// echo $com->status();
-p($p);
 ?>
