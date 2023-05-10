@@ -37,30 +37,45 @@ delete($id)
 
 example : 
 
+
 require_once "connection.php"; 
+
 $con=new connection(host_name,user_name,password,database_name); 
+
 $con->settable(table_name); 
+
 $con->all();
+
 
 Error handler is Created in this File if error accur then eroor handler Call Automatically
 Example :
 
+
 require_once "connection.php";
+
 $con=new connection("host","user","password",""db_name);
+
 $con->settable("test");
+
 $con->all();
+
 
  output :
  
+ 
 Table 'db_name.test' doesn't exist on line number 3
-
 also html popup error oe success message javaScript function available the function name Is mesaage(message,error/success)
 and the popup tag css available in it.
 
+
 example :
 
+
 <script>
+ 
   message("Error Found","error");
+ 
   </script>
+  
   
   this message tag Shor top right corner in the web page
