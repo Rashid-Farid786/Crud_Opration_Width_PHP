@@ -126,7 +126,7 @@ class Connection{
         $e=$this->con->prepare($sql);
         $e->bind_param("i",$id);
         $e->execute();
-        if($e->num_rows>0){
+        if(!$this->con->error){
             return $this->convert(true,"success","",$e->get_result()->fetch_all());
         }else{
             return $this->convert(false,"Data Not Found",$this->con->error,"");
@@ -139,7 +139,7 @@ class Connection{
         $e=$this->con->prepare($sql);
         $e->execute();
         $request=$e->get_result()->fetch_all();
-        if($e->num_rows>0){
+        if($this->con->error>0){
             return $this->convert(false,"Get All Data Query Error","","");
         }else{
             return $this->convert(true,"success",$this->con->error,$request);
@@ -285,12 +285,4 @@ function breake_arry($arr){
         print_r($arr);
         echo "</pre>";
     }
-    $com=new Connection("localhost","root","","testing");
-    $com->settable("data");
-//   $p=$com->insert(["name"=>"rashid farid","email"=>"testing@gmail.com","password"=>"1234"]);
-// $p=$com->update(["name"=>"rashid farid","email"=>"testing@gmail.com","password"=>"1234"],10);
-$p=$com->query("SELECT * FROM data");
-// echo $com->status();
-p($p);
-echo $a;
 ?>
