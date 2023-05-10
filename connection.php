@@ -1,12 +1,13 @@
 <!-- Pup up css code -->
 <style>
-    .cruderror,.crudsuccess{
+    .cruderror,.crudsuccess,.crudwhite{
         max-width:80%;
         padding:5px 20px;
         border-radius:10px;
         position:fixed;
         top:2%;
-        right:10%;
+        left:20%;
+        transform:translateX(-50%);
         z-index:10000;
         display:flex;
         font-size:40px;
@@ -15,9 +16,6 @@
         justify-content:center;
         transform:translate(-10%,-10%);
     }
-    .cruderror,.success:focus{
-        background:black;
-    }
     .cruderror{
         color:rgba(255,0,0,1);
         background:rgba(150,0,0,0.3);
@@ -25,6 +23,10 @@
     .crudsuccess{
         color:rgba(0,255,0,1);
         background:rgba(0,150,0,0.5);
+    }
+    .crudwhite{
+        color:white;
+        background: #222222;
     }
 </style>
 <!-- pup up code -->
@@ -43,15 +45,14 @@
 <?php
  error_reporting(0);
  ini_set("display_errors",0);
-function errorHandler($errorno,$errorstr,$errorfile,$errorcontxt){
-    echo "<script>message('{$errorstr} and the error number is : {$errorno}','cruderror');</script>";
+function errorHandler($errorno,$errorstr,$errorfile,$errorline){
+    echo "<script>message('Error : {$errorstr} , the line number is : {$errorline} and the file is : ".basename($errorfile)."','crudwhite');</script>";
 }
-function exeptionHandler(Throwable $exeception){
-   echo '<script>message("'.$exeception->getmessage().' on line number : '.$exeception->getLine().'","cruderror");</script>';
+function exeptionHandler(Throwable $exception){
+   echo '<script>message("Error : '.$exception->getmessage().' on line number is : '.$exception->getLine().' and file is : '.basename($exception->getfile()).'","crudwhite");</script>';
 }
 set_error_handler("errorHandler");
 set_exception_handler("exeptionHandler");
-use AppRouter\Router;
 class obj{
     public $status;
     public $message;
@@ -239,6 +240,7 @@ class Connection{
     public function gettable(){
         return $this->table;
     }
+
     // Cover Array To Object
     private function convert(bool $staus,String $message,string $error,$data):array{
         $object;
