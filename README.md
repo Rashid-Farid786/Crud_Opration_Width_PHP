@@ -25,8 +25,7 @@ find( $id )
 //Insert data to database and return object width insert row id.the array keys database colums name and value where insert in database 
 insert( array() )
 
-//Update data from database.the array keys are database fields names and the value where updated to.the second param is id where data  
-update
+//Update data from database.the array keys are database fields names and the value where updated to.the second param is id where data update
 
 update( array(),  $id )
 
