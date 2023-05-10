@@ -239,12 +239,6 @@ class Connection{
     public function gettable(){
         return $this->table;
     }
-    private function foreach($data){
-        $edata=[];
-        foreach($data as $key=>$value){
-        }
-    }
-
     // Cover Array To Object
     private function convert(bool $staus,String $message,string $error,$data):array{
         $object;
@@ -280,9 +274,4 @@ function breake_arry($arr){
         }
         return $re;
 }
-    function p($arr){
-        echo "<pre>";
-        print_r($arr);
-        echo "</pre>";
-    }
 ?>
