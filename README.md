@@ -64,6 +64,7 @@ $con->all();
  
  
 Table 'db_name.test' doesn't exist on line number 3
+
 also html popup error oe success message javaScript function available the function name Is mesaage(message,error/success)
 and the popup tag css available in it.
 
