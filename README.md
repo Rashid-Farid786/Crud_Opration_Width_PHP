@@ -53,7 +53,7 @@ Example :
 
 require_once "connection.php";
 
-$con=new connection("host","user","password",""db_name);
+$con=new connection("host","user","password","db_name");
 
 $con->settable("test");
 
