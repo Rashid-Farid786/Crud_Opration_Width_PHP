@@ -1,14 +1,11 @@
-<?php
-// error_reporting(0);
-// ini_set("display_errors",0);
-?>
 <!-- Pup up css code -->
 <style>
-    .error,.success{
+    .cruderror,.crudsuccess{
+        max-width:80%;
         padding:5px 20px;
         border-radius:10px;
-        position:absolute;
-        top:10%;
+        position:fixed;
+        top:2%;
         right:10%;
         z-index:10000;
         display:flex;
@@ -18,14 +15,14 @@
         justify-content:center;
         transform:translate(-10%,-10%);
     }
-    .error,.success:focus{
+    .cruderror,.success:focus{
         background:black;
     }
-    .error{
+    .cruderror{
         color:rgba(255,0,0,1);
-        background:rgba(150,0,0,0.5);
+        background:rgba(150,0,0,0.3);
     }
-    .success{
+    .crudsuccess{
         color:rgba(0,255,0,1);
         background:rgba(0,150,0,0.5);
     }
@@ -45,13 +42,14 @@
 </script>
 <?php
 function errorHandler($errorno,$errorstr,$errorfile,$errorcontxt){
-    echo $errorstr." and the error number is : ".$errorno;
+    echo "<script>message('{$errorstr} and the error number is : {$errorno}','cruderror');</script>";
 }
 function exeptionHandler(Throwable $exeception){
-   echo $exeception->getmessage()." on line number ".$exeception->getLine();
+   echo '<script>message("'.$exeception->getmessage().' on line number : '.$exeception->getLine().'","cruderror");</script>';
 }
 set_error_handler("errorHandler");
 set_exception_handler("exeptionHandler");
+use AppRouter\Router;
 class obj{
     public $status;
     public $message;
@@ -99,7 +97,7 @@ class Connection{
     }
 
     // Query To Database
-    public function Query(string $sql):object{
+    public function Query(string $sql):array{
         if($this->checkstatus){
             $request=$this->con->prepare($sql);
             $request->execute();
@@ -121,7 +119,7 @@ class Connection{
     }
 
     // get Table Data By ID
-    public function find($id):object{
+    public function find($id):array{
         $sql="SELECT * FROM {$this->table} WHERE id=?";
         $e=$this->con->prepare($sql);
         $e->bind_param("i",$id);
@@ -134,7 +132,7 @@ class Connection{
     }
 
     // Selct All Database Data
-    public function all():object{
+    public function all():array{
         $sql="SELECT * FROM ".$this->table;
         $e=$this->con->prepare($sql);
         $e->execute();
@@ -147,7 +145,7 @@ class Connection{
     }
 
     // insert Data In Database
-    public function insert(array $arr):object{
+    public function insert(array $arr):array{
         $k=array_keys($arr);
         $keys=implode(",",$k);
         $values="";
@@ -239,9 +237,14 @@ class Connection{
     public function gettable(){
         return $this->table;
     }
+    private function foreach($data){
+        $edata=[];
+        foreach($data as $key=>$value){
+        }
+    }
 
     // Cover Array To Object
-    private function convert(bool $staus,String $message,string $error,$data):object{
+    private function convert(bool $staus,String $message,string $error,$data):array{
         $object;
         if(is_array($data)){
             $object=$data;
@@ -252,7 +255,7 @@ class Connection{
             }else{
                 $object=["data"=>"none"];
             }
-            return new obj($staus,$message,$error,$object);
+            return(array)(new obj($staus,$message,$error,$object));
     }
 
         // Close Database Connection
@@ -280,4 +283,12 @@ function breake_arry($arr){
         print_r($arr);
         echo "</pre>";
     }
+    $com=new Connection("localhost","root","","testing");
+    $com->settable("data");
+//   $p=$com->insert(["name"=>"rashid farid","email"=>"testing@gmail.com","password"=>"1234"]);
+// $p=$com->update(["name"=>"rashid farid","email"=>"testing@gmail.com","password"=>"1234"],10);
+$p=$com->query("SELECT * FROM data");
+// echo $com->status();
+p($p);
+echo $a;
 ?>
