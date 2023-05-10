@@ -2,19 +2,19 @@
 One file Perform Crud operation Easy
 in This File All Crud Operation Created Like
 
-settable($table) // select table one paramer is table name
+settable($table)	 // select table one paramer is table name
 
-gettable(); return current table name no param requered
+gettable() 	 // return current table name no param requered
 
-all()  //Select All Data From Data Base return object no param
+all()  	//Select All Data From Data Base return object no param
 
-find($id)  //Find and data With id and return object with data.passed id where data find in database
+find( $id )	  //Find and data With id and return object with data.passed id where data find in database
 
-insert(array()) //Insert data to database and return object width insert row id.the array keys database colums name and value where insert in database
+insert( array() )	 	//Insert data to database and return object width insert row id.the array keys database colums name and value where insert in database
 
-update(array(),$id) //Update data from database.the array keys are database fields names and the value where updated to.the second param is id where data update
+update( array(),  $id )	 //Update data from database.the array keys are database fields names and the value where updated to.the second param is id where data update
 
-delete($id) // delete data where row id passed in and return object width deleted row in
+delete($id)	 // delete data where row id passed in and return object width deleted row in
 
 example :
 
