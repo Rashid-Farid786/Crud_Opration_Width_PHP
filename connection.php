@@ -45,6 +45,14 @@
 </script>
 <?php
 include_once 'Route.php';
+function errorHandler($errorno,$errorstr,$errorfile,$errorcontxt){
+    echo $errorstr;
+}
+function exeptionHandler(Throwable $exeception){
+   echo $exeception->getmessage()." on line number ".$exeception->getLine();
+}
+set_error_handler("errorHandler");
+set_exception_handler("exeptionHandler");
 use AppRouter\Router;
 class obj{
     public $status;
@@ -278,7 +286,7 @@ function breake_arry($arr){
     $com->settable("data");
 //   $p=$com->insert(["name"=>"rashid farid","email"=>"testing@gmail.com","password"=>"1234"]);
 // $p=$com->update(["name"=>"rashid farid","email"=>"testing@gmail.com","password"=>"1234"],10);
-$p=$com->query("SELECT * FROM dat");
+$p=$com->query("SELECT * FROM data");
 // echo $com->status();
 p($p);
 ?>
