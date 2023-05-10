@@ -44,16 +44,14 @@
     }
 </script>
 <?php
-include_once 'Route.php';
 function errorHandler($errorno,$errorstr,$errorfile,$errorcontxt){
-    echo $errorstr;
+    echo $errorstr." and the error number is : ".$errorno;
 }
 function exeptionHandler(Throwable $exeception){
    echo $exeception->getmessage()." on line number ".$exeception->getLine();
 }
 set_error_handler("errorHandler");
 set_exception_handler("exeptionHandler");
-use AppRouter\Router;
 class obj{
     public $status;
     public $message;
