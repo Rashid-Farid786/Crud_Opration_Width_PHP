@@ -1,0 +1,18 @@
+{
+    "name": "rashidfarif/simple_php_crud",
+    "description": "this library perform crud operations width build in template or using functions",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rashidfarif\\SimplePhpCrud\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rashid Farid"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
