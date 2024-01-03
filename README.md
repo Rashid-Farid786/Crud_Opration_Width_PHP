@@ -8,11 +8,11 @@ in This File All Crud Operation Created Like
 
 ## return current table name no param requered 
 
-  gettable()
+    gettable()
 
 ## Select All Data From Data Base return object no param 
 
-  all()
+    all()
 
 ## Find and data With id and return object with data.passed id where data find in database 
 
