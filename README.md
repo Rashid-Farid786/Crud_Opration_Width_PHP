@@ -1,6 +1,6 @@
 # Crud_Opration_Width_PHP 
 ### One file Perform Crud operation Easy 
-in This File All Crud Operation Created Like 
+### in This File All Crud Operation Created Like 
 
 #### select table one paramer is table name
 
@@ -51,7 +51,7 @@ in This File All Crud Operation Created Like
 #### Table 'db_name.test' doesn't exist on line number 3
 
 #### also html popup error oe success message javaScript function available the function name Is mesaage(message,error/success)
-and the popup tag css available in it.
+#### and the popup tag css available in it.
 
 ## example :
 
