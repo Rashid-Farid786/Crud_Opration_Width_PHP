@@ -59,4 +59,4 @@
     message("Error Found","error");
     </script>
 
-#### this message tag Shor top right corner in the web page
+#### this message tag Show top right corner in the web page
