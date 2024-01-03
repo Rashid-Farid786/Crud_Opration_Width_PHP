@@ -1,63 +1,63 @@
-# Crud_Opration_Width_PHP 
+## Crud_Opration_Width_PHP 
 One file Perform Crud operation Easy 
 in This File All Crud Operation Created Like 
 
-// select table one paramer is table name
+#select table one paramer is table name
 
-settable($table)	
-
-
-// return current table name no param requered 
-
-gettable()
+  settable($table)	
 
 
-//Select All Data From Data Base return object no param 
+#return current table name no param requered 
 
-all()
-
-
-//Find and data With id and return object with data.passed id where data find in database 
-
-find( $id ) 
+  gettable()
 
 
-//Insert data to database and return object width insert row id.the array keys database colums name and value where insert in database 
-insert( array() )
+#Select All Data From Data Base return object no param 
 
-//Update data from database.the array keys are database fields names and the value where updated to.the second param is id where data update
-
-update( array(),  $id )
+  all()
 
 
-// delete data where row id passed in and return object width deleted row in 
+#Find and data With id and return object with data.passed id where data find in database 
 
-delete($id) 
+  find( $id ) 
+
+
+#Insert data to database and return object width insert row id.the array keys database colums name and value where insert in database 
+  insert( array() )
+
+#Update data from database.the array keys are database fields names and the value where updated to.the second param is id where data update
+
+  update( array(),  $id )
+
+
+#delete data where row id passed in and return object width deleted row in 
+
+  delete($id) 
 
 
 example : 
 
 
-require_once "connection.php"; 
+  require_once "connection.php"; 
 
-$con=new connection(host_name,user_name,password,database_name); 
+  $con=new connection(host_name,user_name,password,database_name); 
 
-$con->settable(table_name); 
+  $con->settable(table_name); 
 
-$con->all();
+  $con->all();
 
 
 Error handler is Created in this File if error accur then eroor handler Call Automatically
 Example :
 
 
-require_once "connection.php";
+  require_once "connection.php";
 
-$con=new connection("host","user","password","db_name");
+  $con=new connection("host","user","password","db_name");
 
-$con->settable("test");
+  $con->settable("test");
 
-$con->all();
+  $con->all();
 
 
  output :
@@ -72,11 +72,11 @@ and the popup tag css available in it.
 example :
 
 
-<script>
+  <script>
  
   message("Error Found","error");
  
   </script>
   
   
-  this message tag Shor top right corner in the web page
+this message tag Shor top right corner in the web page
