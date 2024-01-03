@@ -22,7 +22,7 @@ in This File All Crud Operation Created Like
 
     insert(array())
 
-### Update data from database.the array keys are database fields names and the value where updated to.the second param is id where data update
+#### Update data from database.the array keys are database fields names and the value where updated to.the second param is id where data update
 
     update(array(),$id)
 
