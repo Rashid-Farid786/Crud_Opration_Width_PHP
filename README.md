@@ -1,6 +1,6 @@
 # Crud_Opration_Width_PHP 
-### One file Perform Crud operation Easy 
-### in This File All Crud Operation Created Like 
+#### One file Perform Crud operation Easy 
+#### in This File All Crud Operation Created Like 
 
 #### select table one paramer is table name
 
