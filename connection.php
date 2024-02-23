@@ -243,7 +243,7 @@ class Connection{
 
     // Cover Array To Object
     private function convert(bool $staus,String $message,string $error,$data):array{
-        $object;
+        $object=[];
         if(is_array($data)){
             $object=$data;
             }else if(is_object($data)){
@@ -265,7 +265,7 @@ class Connection{
     }
 }
 function breake_arry($arr){
-    $re;
+    $re=[];
     foreach($arr as $key=>$value){
         if(is_array($value)){
                 // array_push($re,$value1);
